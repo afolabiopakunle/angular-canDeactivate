@@ -6,15 +6,34 @@ import { AppComponent } from './app.component';
 import { MaterialsModule } from './materials/materials.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthComponent } from './auth/auth.component';
+import { RouterModule } from '@angular/router';
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
+
+const routes = [
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'login', component: AuthComponent},
+  {path: 'register', component: RegisterComponent}
+]
 
 @NgModule({
   imports:      [ 
     BrowserModule, 
     BrowserAnimationsModule, 
     ReactiveFormsModule, 
-    MaterialsModule, 
+    MaterialsModule,
+    RouterModule.forRoot([
+      {path: '', redirectTo: '/home', pathMatch: 'full'},
+      {path: 'login', component: AuthComponent},
+      {path: 'register', component: RegisterComponent}
+    ])
   ],
-  declarations: [ AppComponent, AuthComponent ],
+  declarations: [ 
+    AppComponent, 
+    AuthComponent,
+    RegisterComponent,
+    LoginComponent,
+   ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
