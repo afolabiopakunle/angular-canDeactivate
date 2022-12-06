@@ -4,9 +4,15 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MaterialsModule } from './materials/materials.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, MaterialsModule ],
+  imports:      [ 
+    BrowserModule, 
+    BrowserAnimationsModule, 
+    FormsModule, 
+    MaterialsModule, 
+  ],
   declarations: [ AppComponent, ],
   bootstrap:    [ AppComponent ]
 })

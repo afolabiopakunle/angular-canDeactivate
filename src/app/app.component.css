@@ -1,3 +1,7 @@
 p {
   font-family: Lato;
 }
+
+.form-control {
+  height: 15px;
+}
