@@ -23,7 +23,7 @@ const routes = [
     ReactiveFormsModule, 
     MaterialsModule,
     RouterModule.forRoot([
-      {path: '', redirectTo: '/home', pathMatch: 'full'},
+      {path: '', redirectTo: 'login', pathMatch: 'full'},
       {path: 'login', component: AuthComponent},
       {path: 'register', component: RegisterComponent}
     ])
