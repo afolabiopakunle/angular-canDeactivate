@@ -12,7 +12,7 @@ import { LoginComponent } from './auth/login/login.component';
 
 const routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
-  {path: 'login', component: AuthComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent}
 ]
 
@@ -23,9 +23,13 @@ const routes = [
     ReactiveFormsModule, 
     MaterialsModule,
     RouterModule.forRoot([
-      {path: '', redirectTo: 'login', pathMatch: 'full'},
-      {path: 'login', component: AuthComponent},
-      {path: 'register', component: RegisterComponent}
+      {path: '', redirectTo: 'auth', pathMatch: 'full'},
+      {path: 'auth', component: AuthComponent, children: [
+        {path: '', redirectTo: 'login', pathMatch: 'full'},
+        {path: 'login', component: LoginComponent},
+        {path: 'register', component: RegisterComponent}
+      ]},
+
     ])
   ],
   declarations: [ 
